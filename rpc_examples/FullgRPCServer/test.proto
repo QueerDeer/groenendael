@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package test;
+
+service Greeter {
+  rpc SendLine (Hello) returns (test_line) {}
+}
+
+message Hello {
+  string name = 1;
+}
+
+message test_line {
+   int32 uid = 1;
+   string line = 2;
+}

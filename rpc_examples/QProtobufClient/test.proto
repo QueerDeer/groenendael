@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package test;
+
+message test_line {
+    int32 uid = 1;
+    string line = 2;
+}
