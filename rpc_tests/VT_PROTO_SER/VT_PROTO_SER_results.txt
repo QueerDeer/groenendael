@@ -1,0 +1,10 @@
+for 200file.txt file: ser_middltime 0.0625777 sec; desr_middletime 0.0625338 sec; src_file of 209715200 byte; midle_trans_pack of 2.09715e+08 bytes
+for 200file.bin file: ser_middltime 0.0618974 sec; desr_middletime 0.0618538 sec; src_file of 209715200 byte; midle_trans_pack of 2.09715e+08 bytes
+for 400file.txt file: ser_middltime 0.125349 sec; desr_middletime 0.125794 sec; src_file of 419430400 byte; midle_trans_pack of 4.1943e+08 bytes
+for 400file.bin file: ser_middltime 0.124943 sec; desr_middletime 0.125452 sec; src_file of 419430400 byte; midle_trans_pack of 4.1943e+08 bytes
+for 600file.txt file: ser_middltime 0.188761 sec; desr_middletime 0.188769 sec; src_file of 629145600 byte; midle_trans_pack of 6.29146e+08 bytes
+for 600file.bin file: ser_middltime 0.186943 sec; desr_middletime 0.187622 sec; src_file of 629145600 byte; midle_trans_pack of 6.29146e+08 bytes
+for 800file.txt file: ser_middltime 0.2438 sec; desr_middletime 0.243024 sec; src_file of 838860800 byte; midle_trans_pack of 8.38861e+08 bytes
+for 800file.bin file: ser_middltime 0.245075 sec; desr_middletime 0.244277 sec; src_file of 838860800 byte; midle_trans_pack of 8.38861e+08 bytes
+for 1000file.txt file: ser_middltime 0.303828 sec; desr_middletime 0.302318 sec; src_file of 1048576000 byte; midle_trans_pack of 1.04858e+09 bytes
+for 1000file.bin file: ser_middltime 0.305934 sec; desr_middletime 0.304616 sec; src_file of 1048576000 byte; midle_trans_pack of 1.04858e+09 bytes
