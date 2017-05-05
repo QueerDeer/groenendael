@@ -1,0 +1,14 @@
+for 200file.txt file and binary protocol: ser_middltime 0.0901578 sec; desr_middletime 0.0872823 sec; src_file of 209715200 byte; midle_trans_pack of 2.09715e+08 bytes
+for 200file.txt file and JSON protocol: ser_middltime 3.20464 sec; desr_middletime 3.19432 sec; src_file of 209715200 byte; midle_trans_pack of 1.25829e+09 bytes
+for 200file.bin file and binary protocol: ser_middltime 0.0872844 sec; desr_middletime 0.0832008 sec; src_file of 209715200 byte; midle_trans_pack of 2.09715e+08 bytes
+for 200file.bin file and JSON protocol: ser_middltime 3.20716 sec; desr_middletime 4.10412 sec; src_file of 209715200 byte; midle_trans_pack of 1.25829e+09 bytes
+for 400file.txt file and binary protocol: ser_middltime 0.170483 sec; desr_middletime 0.291576 sec; src_file of 419430400 byte; midle_trans_pack of 4.1943e+08 bytes
+for 400file.txt file and JSON protocol: ser_middltime 6.41541 sec; desr_middletime 9.02067 sec; src_file of 419430400 byte; midle_trans_pack of 2.51658e+09 bytes
+for 400file.bin file and binary protocol: ser_middltime 0.169272 sec; desr_middletime 0.161226 sec; src_file of 419430400 byte; midle_trans_pack of 4.1943e+08 bytes
+for 400file.bin file and JSON protocol: ser_middltime 6.40683 sec; desr_middletime 10.719 sec; src_file of 419430400 byte; midle_trans_pack of 2.51658e+09 bytes
+for 600file.txt file and binary protocol: ser_middltime 0.256252 sec; desr_middletime 0.371021 sec; src_file of 629145600 byte; midle_trans_pack of 6.29146e+08 bytes
+for 600file.bin file and binary protocol: ser_middltime 0.256614 sec; desr_middletime 0.37311 sec; src_file of 629145600 byte; midle_trans_pack of 6.29146e+08 bytes
+for 800file.txt file and binary protocol: ser_middltime 0.342792 sec; desr_middletime 0.381651 sec; src_file of 838860800 byte; midle_trans_pack of 8.38861e+08 bytes
+for 800file.bin file and binary protocol: ser_middltime 0.342058 sec; desr_middletime 0.424805 sec; src_file of 838860800 byte; midle_trans_pack of 8.38861e+08 bytes
+for 1000file.txt file and binary protocol: ser_middltime 0.545331 sec; desr_middletime 1.46582 sec; src_file of 1048576000 byte; midle_trans_pack of 1.04858e+09 bytes
+for 1000file.bin file and binary protocol: ser_middltime 0.514922 sec; desr_middletime 1.46429 sec; src_file of 1048576000 byte; midle_trans_pack of 1.04858e+09 bytes

@@ -15,9 +15,8 @@ int main(int argc, char *argv[])
     double ser_time = 0.0;
     double ser_val = 0.0;
     double deser_time = 0.0;
-    std::string msg;
 
-    std::ifstream fl("/home/groenendael/test_data/200file.bin");
+    std::ifstream fl(argv[1]);
     fl.seekg( 0, std::ios::end );
     size_t len = fl.tellg();
     char *buf = new char[len];
@@ -25,38 +24,95 @@ int main(int argc, char *argv[])
     fl.read(buf, len);
     fl.close();
     std::string s(buf, len);
+    std::vector<uint8_t> v(s.begin(), s.end());
 
-    //test::file_content dst_obj;
-    //test::file_content src_obj;
-    //src_obj.set_line(s);
+    avro::EncoderPtr eB = avro::binaryEncoder();
 
     for (int i = 0; i<1000; ++i)
     {
+        std::auto_ptr<avro::OutputStream> out = avro::memoryOutputStream();
+        eB->init(*out);
+        c::file_content message_out;
+        message_out.line = v;
         s1 = clock();
-        //src_obj.SerializeToString(&msg);
+        avro::encode(*eB, message_out);
         f1 = clock();
         ser_time += f1 - s1;
-	std::cout << s1 << "ser" << f1 << std::endl;
+        eB->flush();
 
-        ser_val += msg.capacity();
-
+        ser_val += out->byteCount();
+        std::auto_ptr<avro::InputStream> in = avro::memoryInputStream(*out);
+        avro::DecoderPtr dB = avro::binaryDecoder();
+        dB->init(*in);
+        c::file_content message_in;
         s2 = clock();
-        //dst_obj.ParseFromString(msg);
+        avro::decode(*dB, message_in);
         f2 = clock();
         deser_time += f2 - s2;
-	std::cout << s2 << "deser" << f2 << std::endl;
+
+        out.reset();
+        in.reset();
+
     }
 
-    //std::ofstream fout("VT_AVRO_SER_results.txt", std::ios::app);
-    std::cout << "for " << "/home/groenendael/test_data/200file.bin" << " file: "
-         << "ser_middltime " << (ser_time/10)/CLOCKS_PER_SEC << " sec"
-         << "; desr_middletime " << (deser_time/10)/CLOCKS_PER_SEC << " sec"
+    std::ofstream fout("VT_AVRO_SER_results.txt", std::ios::app);
+    fout << "for " << argv[1] << " file and binary protocol: "
+         << "ser_middltime " << (ser_time/1000)/CLOCKS_PER_SEC << " sec"
+         << "; desr_middletime " << (deser_time/1000)/CLOCKS_PER_SEC << " sec"
          << "; src_file of " << len << " byte"
-         << "; midle_trans_pack of " << ser_val/10 << " bytes" << std::endl;
+         << "; midle_trans_pack of " << ser_val/1000 << " bytes"
+         << std::endl;
 
-    //fout.close();
+    fout.close();
 
-    return a.exec();
-    //a.quit();
+    ser_time = 0.0;
+    ser_val = 0.0;
+    deser_time = 0.0;
+
+    std::ifstream input("test.json");
+    avro::ValidSchema testSchema;
+    avro::compileJsonSchema(input, testSchema);
+
+    avro::EncoderPtr e = avro::jsonEncoder(testSchema);
+
+    for (int i = 0; i<1000; ++i)
+    {
+        std::auto_ptr<avro::OutputStream> out = avro::memoryOutputStream();
+        e->init(*out);
+        c::file_content message_out;
+        message_out.line = v;
+        s1 = clock();
+        avro::encode(*e, message_out);
+        f1 = clock();
+        ser_time += f1 - s1;
+        e->flush();
+
+        ser_val += out->byteCount();
+        std::auto_ptr<avro::InputStream> in = avro::memoryInputStream(*out);
+        avro::DecoderPtr d = avro::jsonDecoder(testSchema);
+        d->init(*in);
+        c::file_content message_in;
+        s2 = clock();
+        avro::decode(*d, message_in);
+        f2 = clock();
+        deser_time += f2 - s2;
+
+        out.reset();
+        in.reset();
+
+    }
+
+    fout.open("VT_AVRO_SER_results.txt", std::ios::app);
+    fout << "for " << argv[1] << " file and JSON protocol: "
+         << "ser_middltime " << (ser_time/1000)/CLOCKS_PER_SEC << " sec"
+         << "; desr_middletime " << (deser_time/1000)/CLOCKS_PER_SEC << " sec"
+         << "; src_file of " << len << " byte"
+         << "; midle_trans_pack of " << ser_val/1000 << " bytes"
+         << std::endl;
+
+    fout.close();
+
+    //return a.exec();
+    a.quit();
 }
 
