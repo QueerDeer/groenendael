@@ -22,5 +22,3 @@ for 800file.bin file and binary protocol: ser_middltime 0.347132 sec; desr_middl
 for 800file.bin file and compact protocol: ser_middltime 0.28748 sec; desr_middletime 2.22752 sec; src_file of 838860800 byte; midle_trans_pack of 8.38861e+08 bytes
 for 1000file.txt file and binary protocol: ser_middltime 0.54001 sec; desr_middletime 0.744486 sec; src_file of 1048576000 byte; midle_trans_pack of 1.04858e+09 bytes
 for 1000file.bin file and binary protocol: ser_middltime 0.529011 sec; desr_middletime 0.671457 sec; src_file of 1048576000 byte; midle_trans_pack of 1.04858e+09 bytes
-for /home/groenendael/test_data/800file.txt file and compact protocol: ser_middltime 1.18601 sec; desr_middletime 1.58943 sec; src_file of 838860800 byte; midle_trans_pack of 8.38861e+08 bytes
-for /home/groenendael/test_data/800file.bin file and compact protocol: ser_middltime 0.943816 sec; desr_middletime 1.76605 sec; src_file of 838860800 byte; midle_trans_pack of 8.38861e+08 bytes

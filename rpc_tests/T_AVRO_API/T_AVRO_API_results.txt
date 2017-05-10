@@ -1,0 +1,10 @@
+for /home/groenendael/test_data/200file.txt file and avro_binary: api_middltime 0.1199 sec
+for /home/groenendael/test_data/200file.bin file and avro_binary: api_middltime 0.100534 sec
+for /home/groenendael/test_data/400file.txt file and avro_binary: api_middltime 0.20115 sec
+for /home/groenendael/test_data/400file.bin file and avro_binary: api_middltime 0.192149 sec
+for /home/groenendael/test_data/600file.txt file and avro_binary: api_middltime 0.259399 sec
+for /home/groenendael/test_data/600file.bin file and avro_binary: api_middltime 0.291825 sec
+for /home/groenendael/test_data/800file.txt file and avro_binary: api_middltime 0.428204 sec
+for /home/groenendael/test_data/800file.bin file and avro_binary: api_middltime 0.417253 sec
+for /home/groenendael/test_data/200file.txt file and avro_json: api_middltime 0.705784 sec
+for /home/groenendael/test_data/200file.bin file and avro_json: api_middltime 0.636054 sec

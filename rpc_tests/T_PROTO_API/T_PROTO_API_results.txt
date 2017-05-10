@@ -1,0 +1,10 @@
+for /home/groenendael/test_data/200file.txt file and proto_binary: api_middltime 0.10424 sec
+for /home/groenendael/test_data/200file.bin file and proto_binary: api_middltime 0.105663 sec
+for /home/groenendael/test_data/400file.txt file and proto_binary: api_middltime 0.214352 sec
+for /home/groenendael/test_data/400file.bin file and proto_binary: api_middltime 0.193762 sec
+for /home/groenendael/test_data/600file.txt file and proto_binary: api_middltime 0.321076 sec
+for /home/groenendael/test_data/600file.bin file and proto_binary: api_middltime 0.28097 sec
+for /home/groenendael/test_data/800file.txt file and proto_binary: api_middltime 0.387013 sec
+for /home/groenendael/test_data/800file.bin file and proto_binary: api_middltime 0.425127 sec
+for /home/groenendael/test_data/1000file.txt file and proto_binary: api_middltime 0.533365 sec
+for /home/groenendael/test_data/1000file.bin file and proto_binary: api_middltime 0.532072 sec
