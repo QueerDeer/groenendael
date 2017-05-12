@@ -1,0 +1,16 @@
+for /home/groenendael/test_data/200file.txt file and grpc: callback_time = 0.894703 sec
+for /home/groenendael/test_data/400file.txt file and grpc: callback_time = 1.61815 sec
+for /home/groenendael/test_data/600file.txt file and grpc: callback_time = 2.54929 sec
+for /home/groenendael/test_data/800file.txt file and grpc: callback_time = 3.14397 sec
+for /home/groenendael/test_data/1000file.txt file and grpc: callback_time = 3.88508 sec //way one
+
+for /home/groenendael/test_data/200file.txt file and grpc: callback_time = 0.684756 sec
+for /home/groenendael/test_data/200file.bin file and grpc: callback_time = 0.678825 sec
+for /home/groenendael/test_data/400file.txt file and grpc: callback_time = 1.397 sec
+for /home/groenendael/test_data/400file.bin file and grpc: callback_time = 1.37449 sec
+for /home/groenendael/test_data/600file.txt file and grpc: callback_time = 2.41211 sec
+for /home/groenendael/test_data/600file.bin file and grpc: callback_time = 2.52938 sec
+for /home/groenendael/test_data/800file.txt file and grpc: callback_time = 3.19286 sec
+for /home/groenendael/test_data/800file.bin file and grpc: callback_time = 3.43415 sec
+for /home/groenendael/test_data/1000file.txt file and grpc: callback_time = 3.57176 sec
+for /home/groenendael/test_data/1000file.bin file and grpc: callback_time = 3.38595 sec //way two - preferable

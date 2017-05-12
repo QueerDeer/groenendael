@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package test;
+
+service Greeter {
+  rpc SendLine (Hello) returns (test_line) {}
+}
+
+message Hello {
+  bytes name = 1;
+}
+
+message test_line {
+   bytes line = 1;
+}
