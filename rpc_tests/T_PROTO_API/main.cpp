@@ -98,7 +98,7 @@ int main(int argc, char *argv[])
     puts("Connection accepted");
 
 
-for (int j = 0; j<1; ++j)
+for (int j = 0; j<100; ++j)
 {
     int send_index = 0;
     int send_size = real_size;
@@ -133,7 +133,7 @@ for (int j = 0; j<1; ++j)
 
 std::ofstream fout("T_PROTO_API_results.txt", std::ios::app);
 fout << "for " << argv[1] << " file and proto_binary: "
-     << "api_middltime " << (time)/CLOCKS_PER_SEC << " sec"
+     << "api_middltime " << (time/100)/CLOCKS_PER_SEC << " sec"
      << std::endl;
 
 fout.close();

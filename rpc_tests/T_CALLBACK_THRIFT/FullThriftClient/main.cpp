@@ -4,8 +4,8 @@
 int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
-//    std::string name = argv[1];
-    std::string name = "lol";
+    std::string name = argv[1];
+//    std::string name = "test";
     fullthriftclient client(name);
 
 //    return a.exec();

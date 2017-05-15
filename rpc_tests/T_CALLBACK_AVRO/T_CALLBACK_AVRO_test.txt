@@ -1,0 +1,8 @@
+for/home/groenendael/test_data/200file.txt file and avro-rpc_binary: 1.7 ms
+for/home/groenendael/test_data/200file.bin file and avro-rpc_binary: 1.8 ms
+for/home/groenendael/test_data/400file.txt file and avro-rpc_binary: 3.4 ms
+for/home/groenendael/test_data/400file.bin file and avro-rpc_binary: 3.4 ms
+for/home/groenendael/test_data/600file.txt file and avro-rpc_binary: 37.0 ms
+for/home/groenendael/test_data/600file.bin file and avro-rpc_binary: 30.0 ms
+for/home/groenendael/test_data/800file.txt file and avro-rpc_binary: 63.0 ms
+for/home/groenendael/test_data/800file.bin file and avro-rpc_binary: 57.0 ms

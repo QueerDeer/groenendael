@@ -1,0 +1,4 @@
+for /home/groenendael/test_data/200file.txt file, zmq socket and protobuf: callback_ltime 64.4926 sec
+for /home/groenendael/test_data/200file.bin file, zmq socket and protobuf: callback_ltime 65.5614 sec
+for /home/groenendael/test_data/400file.txt file, zmq socket and protobuf: callback_ltime 61.28 sec
+for /home/groenendael/test_data/400file.bin file, zmq socket and protobuf: callback_ltime 61.341 sec
