@@ -1,0 +1,144 @@
+[
+    {
+        "outputFile": "/home/groenendael/Lapkin/android-build/build/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endLine": 319,
+                    "endColumn": 12,
+                    "endOffset": 44889
+                },
+                "from": {
+                    "file": "/home/groenendael/Lapkin/android-build/res/values/libs.xml",
+                    "position": {
+                        "startLine": 64,
+                        "startColumn": 4,
+                        "startOffset": 3998,
+                        "endLine": 381,
+                        "endColumn": 12,
+                        "endOffset": 48832
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 320,
+                    "startColumn": 4,
+                    "startOffset": 44894,
+                    "endLine": 354,
+                    "endColumn": 12,
+                    "endOffset": 48165
+                },
+                "from": {
+                    "file": "/home/groenendael/Lapkin/android-build/res/values/libs.xml",
+                    "position": {
+                        "startLine": 29,
+                        "startColumn": 4,
+                        "startOffset": 722,
+                        "endLine": 63,
+                        "endColumn": 12,
+                        "endOffset": 3993
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 355,
+                    "startColumn": 4,
+                    "startOffset": 48170,
+                    "endLine": 357,
+                    "endColumn": 12,
+                    "endOffset": 48219
+                },
+                "from": {
+                    "file": "/home/groenendael/Lapkin/android-build/res/values/libs.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 358,
+                    "startColumn": 4,
+                    "startOffset": 48224,
+                    "endLine": 372,
+                    "endColumn": 13,
+                    "endOffset": 48593
+                },
+                "from": {
+                    "file": "/home/groenendael/Lapkin/android-build/res/values/libs.xml",
+                    "position": {
+                        "startLine": 13,
+                        "startColumn": 5,
+                        "startOffset": 347,
+                        "endLine": 27,
+                        "endColumn": 13,
+                        "endOffset": 716
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 373,
+                    "startColumn": 4,
+                    "startOffset": 48598,
+                    "endLine": 375,
+                    "endColumn": 12,
+                    "endOffset": 48708
+                },
+                "from": {
+                    "file": "/home/groenendael/Lapkin/android-build/res/values/libs.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 376,
+                    "startColumn": 4,
+                    "startOffset": 48713,
+                    "endColumn": 107,
+                    "endOffset": 48816
+                },
+                "from": {
+                    "file": "/home/groenendael/Qt/5.9/android_armv7/src/android/java/res/values/strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 377,
+                    "startColumn": 4,
+                    "startOffset": 48821,
+                    "endColumn": 121,
+                    "endOffset": 48938
+                },
+                "from": {
+                    "file": "/home/groenendael/Qt/5.9/android_armv7/src/android/java/res/values/strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 378,
+                    "startColumn": 4,
+                    "startOffset": 48943,
+                    "endColumn": 111,
+                    "endOffset": 49050
+                },
+                "from": {
+                    "file": "/home/groenendael/Qt/5.9/android_armv7/src/android/java/res/values/strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 379,
+                    "startColumn": 4,
+                    "startOffset": 49055,
+                    "endColumn": 84,
+                    "endOffset": 49135
+                },
+                "from": {
+                    "file": "/home/groenendael/Qt/5.9/android_armv7/src/android/java/res/values/strings.xml"
+                }
+            }
+        ]
+    }
+]
