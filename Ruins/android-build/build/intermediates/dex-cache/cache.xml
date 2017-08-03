@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="/home/groenendael/Ruins/android-build/libs/QtAndroidBearer-bundled.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="90f5e4c66fa6142947005e5675dd71fb9068399b">
+        <dex dex="/home/groenendael/Ruins/android-build/build/intermediates/pre-dexed/debug/QtAndroidBearer-bundled_060742f05aee7c9c0702c27065de188f7529043a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/groenendael/Ruins/android-build/libs/QtAndroid-bundled.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="03121132b6c6efdbf8f8e9b078fd199325ec14e9">
+        <dex dex="/home/groenendael/Ruins/android-build/build/intermediates/pre-dexed/debug/QtAndroid-bundled_e9a3a6142be6515d8398256fa45647d43e6027b1.jar" />
+    </item>
+
+</items>
