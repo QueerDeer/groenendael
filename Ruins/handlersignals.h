@@ -18,9 +18,12 @@ signals:
 public slots:
     void changeField(const QString &msg, const QString &pos);
     void generation();
+    void engine();
+    void createSoldier(const QString &pos);
 
 private:
     int field [32][18];
+
 };
 
 #endif // HANDLERSIGNALS_H

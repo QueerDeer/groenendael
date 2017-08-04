@@ -22,5 +22,11 @@ int main(int argc, char *argv[])
     QObject::connect(root, SIGNAL(qmlGenerateField()),
                      handlerSignals, SLOT(generation()));
 
+    QObject::connect(root, SIGNAL(qmlStartEngine()),
+                     handlerSignals, SLOT(engine()));
+
+    QObject::connect(root, SIGNAL(qmlCreateSoldier(QString)),
+                     handlerSignals, SLOT(createSoldier(QString)));
+
     return app.exec();
 }

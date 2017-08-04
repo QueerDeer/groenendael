@@ -2,5 +2,9 @@
     <qresource prefix="/">
         <file>main.qml</file>
         <file>qtquickcontrols2.conf</file>
+        <file>Soldier1.qml</file>
+        <file>Soldier2.qml</file>
+        <file>sold1.png</file>
+        <file>sold2.png</file>
     </qresource>
 </RCC>

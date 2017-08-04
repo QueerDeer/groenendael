@@ -630,8 +630,12 @@ compiler_rcc_clean:
 	-$(DEL_FILE) qrc_qml.cpp
 qrc_qml.cpp: qml.qrc \
 		../Qt/5.9/android_armv7/bin/rcc \
+		Soldier1.qml \
+		sold1.png \
 		qtquickcontrols2.conf \
-		main.qml
+		Soldier2.qml \
+		main.qml \
+		sold2.png
 	/home/groenendael/Qt/5.9/android_armv7/bin/rcc -name qml qml.qrc -o qrc_qml.cpp
 
 compiler_moc_predefs_make_all: moc_predefs.h
@@ -1014,8 +1018,6 @@ moc_handlersignals.cpp: ../Qt/5.9/android_armv7/include/QtCore/QObject \
 		../Qt/5.9/android_armv7/include/QtCore/qsharedpointer.h \
 		../Qt/5.9/android_armv7/include/QtCore/qsharedpointer_impl.h \
 		../Qt/5.9/android_armv7/include/QtCore/QDebug \
-		../Qt/5.9/android_armv7/include/QtCore/QThread \
-		../Qt/5.9/android_armv7/include/QtCore/qthread.h \
 		handlersignals.h \
 		moc_predefs.h \
 		../Qt/5.9/android_armv7/bin/moc
@@ -1433,9 +1435,7 @@ main.o: main.cpp ../Qt/5.9/android_armv7/include/QtGui/QGuiApplication \
 		handlersignals.h \
 		../Qt/5.9/android_armv7/include/QtCore/QObject \
 		../Qt/5.9/android_armv7/include/QtCore/QVariant \
-		../Qt/5.9/android_armv7/include/QtCore/QDebug \
-		../Qt/5.9/android_armv7/include/QtCore/QThread \
-		../Qt/5.9/android_armv7/include/QtCore/qthread.h
+		../Qt/5.9/android_armv7/include/QtCore/QDebug
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o main.cpp
 
 handlersignals.o: handlersignals.cpp handlersignals.h \
@@ -1809,9 +1809,7 @@ handlersignals.o: handlersignals.cpp handlersignals.h \
 		../Qt/5.9/android_armv7/include/QtCore/qcontiguouscache.h \
 		../Qt/5.9/android_armv7/include/QtCore/qsharedpointer.h \
 		../Qt/5.9/android_armv7/include/QtCore/qsharedpointer_impl.h \
-		../Qt/5.9/android_armv7/include/QtCore/QDebug \
-		../Qt/5.9/android_armv7/include/QtCore/QThread \
-		../Qt/5.9/android_armv7/include/QtCore/qthread.h
+		../Qt/5.9/android_armv7/include/QtCore/QDebug
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o handlersignals.o handlersignals.cpp
 
 qrc_qml.o: qrc_qml.cpp 

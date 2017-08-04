@@ -33,7 +33,15 @@
                     "endOffset": 105127
                 },
                 "from": {
-                    "file": "/home/groenendael/Ruins/android-build/res/values/libs.xml"
+                    "file": "/home/groenendael/Ruins/android-build/res/values/libs.xml",
+                    "position": {
+                        "startLine": 26,
+                        "startColumn": 4,
+                        "startOffset": 627,
+                        "endLine": 61,
+                        "endColumn": 12,
+                        "endOffset": 4114
+                    }
                 }
             },
             {

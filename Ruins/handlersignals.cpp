@@ -14,6 +14,17 @@ void HandlerSignals::changeField(const QString &msg, const QString &pos) {
     QMetaObject::invokeMethod(mmm, "changecolor", Q_ARG(QVariant, pos), Q_ARG(QVariant, msg));
 }
 
+void HandlerSignals::createSoldier(const QString &pos) {
+    //спавн то сейчас изобразится, но надо бы предварительный чек на то, не занято ли место, да и создать обьект солдата надо
+    qDebug() << pos;
+    QObject* mmm = this->parent()->findChild<QObject*>("mmm");
+    QMetaObject::invokeMethod(mmm, "createsoldier", Q_ARG(QVariant, pos));
+}
+
+void HandlerSignals::engine() {
+
+}
+
 void HandlerSignals::generation() {
     //deleteAllSoldiers();
 
@@ -45,7 +56,7 @@ void HandlerSignals::generation() {
         for (auto n = 0; n < 18; ++n)
         {
             if (field[m][n] == 0)
-                changeField("burlywood", QString::number(m*18 + n));
+                changeField("#FFCC80", QString::number(m*18 + n));
             if (field[m][n] == 1)
                 changeField("firebrick", QString::number(m*18 + n));
             if (field[m][n] == 2)

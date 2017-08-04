@@ -11,7 +11,8 @@ ApplicationWindow {
 
     signal qmlChangeField(string msg, string pos)
     signal qmlGenerateField()
-
+    signal qmlStartEngine()
+    signal qmlCreateSoldier(string pos)
 
     SwipeView {
         id: swipeView
@@ -28,7 +29,18 @@ ApplicationWindow {
 
                     Button {
                         id: button
+                        text: qsTr("Go")
+                        Material.background: "#FFCC80"
+                        Layout .fillWidth: true
+                        Layout .fillHeight: true
+                        Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
+                        onClicked: {qmlStartEngine()}
+                    }
+
+                    Button {
+                        id: button1
                         text: qsTr("Generate")
+                        Material.background: "#FFCC80"
                         Layout .fillWidth: true
                         Layout .fillHeight: true
                         Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
@@ -36,17 +48,9 @@ ApplicationWindow {
                     }
 
                     Button {
-                        id: button1
-                        text: qsTr("Guide")
-                        Layout .fillWidth: true
-                        Layout .fillHeight: true
-                        Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
-
-                    }
-
-                    Button {
                         id: button2
                         text: qsTr("Quit")
+                        Material.background: "#FFCC80"
                         Layout .fillWidth: true
                         Layout .fillHeight: true
                         Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
@@ -58,6 +62,7 @@ ApplicationWindow {
         }
 
         Page {
+            id:page
             Grid {
                 columns: 18
                 rows: 32
@@ -67,18 +72,30 @@ ApplicationWindow {
                     id:mmm
                     objectName: "mmm"
                     model: 576
+
                     function changecolor(pos, msg) {
-                    mmm.itemAt(pos).color = msg;
+                        mmm.itemAt(pos).color = msg;
                     }
+
+                    function createsoldier(pos) {
+                        if (pos < 288) {
+                            var component = Qt.createComponent("Soldier1.qml");
+                            component.createObject(page);
+                        }
+                        else {
+                            var component2 = Qt.createComponent("Soldier2.qml");
+                            component2.createObject(page);
+                        }
+                        }
 
                     Rectangle {
                         width: 20
                         height: 20
-                        color: "burlywood"
+                        color: "#FFCC80"
 
                         MouseArea {
                             anchors.fill: parent
-                            onClicked: {qmlChangeField("black", index)}
+                            onClicked: {qmlCreateSoldier(index)}
                         }
                     }
 
