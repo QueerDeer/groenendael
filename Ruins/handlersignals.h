@@ -5,7 +5,9 @@
 #include <QVariant>
 #include <QDebug>
 #include <cstdlib>
-#include <time.h>
+#include <stdio.h>      /* printf, NULL */
+#include <stdlib.h>     /* srand, rand */
+#include <time.h>       /* time */
 
 class HandlerSignals : public QObject
 {

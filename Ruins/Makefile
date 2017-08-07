@@ -630,12 +630,34 @@ compiler_rcc_clean:
 	-$(DEL_FILE) qrc_qml.cpp
 qrc_qml.cpp: qml.qrc \
 		../Qt/5.9/android_armv7/bin/rcc \
-		Soldier1.qml \
-		sold1.png \
 		qtquickcontrols2.conf \
+		Soldier1.qml \
 		Soldier2.qml \
-		main.qml \
-		sold2.png
+		but1.png \
+		but2.png \
+		darkolivegreen1.png \
+		sold1.png \
+		darkolivegreen2.png \
+		darkolivegreen3.png \
+		sold2.png \
+		darkolivegreen4.png \
+		firebrick1.png \
+		firebrick2.png \
+		darkolivegreen5.png \
+		darkolivegreen6.png \
+		firebrick3.png \
+		darkolivegreen7.png \
+		firebrick4.png \
+		menu.png \
+		darkolivegreen8.png \
+		firebrick5.png \
+		darkolivegreen9.png \
+		firebrick6.png \
+		firebrick7.png \
+		firebrick8.png \
+		firebrick9.png \
+		road1.png \
+		main.qml
 	/home/groenendael/Qt/5.9/android_armv7/bin/rcc -name qml qml.qrc -o qrc_qml.cpp
 
 compiler_moc_predefs_make_all: moc_predefs.h

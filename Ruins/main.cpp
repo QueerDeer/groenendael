@@ -12,6 +12,8 @@ int main(int argc, char *argv[])
     if (engine.rootObjects().isEmpty())
         return -1;
 
+    srand (time(NULL));
+
     QObject* root = engine.rootObjects()[0];
 
     HandlerSignals *handlerSignals= new HandlerSignals(root);

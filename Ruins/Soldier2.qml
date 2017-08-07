@@ -4,7 +4,7 @@ Item {
     Rectangle {
         width: 20
         height: 20
-        color: "#FFCC80"
+        color: "transparent"
 
         MouseArea {
             anchors.fill: parent

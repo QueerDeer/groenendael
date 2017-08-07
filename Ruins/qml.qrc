@@ -6,5 +6,27 @@
         <file>Soldier2.qml</file>
         <file>sold1.png</file>
         <file>sold2.png</file>
+        <file>darkolivegreen1.png</file>
+        <file>darkolivegreen2.png</file>
+        <file>darkolivegreen3.png</file>
+        <file>darkolivegreen4.png</file>
+        <file>darkolivegreen5.png</file>
+        <file>darkolivegreen6.png</file>
+        <file>darkolivegreen7.png</file>
+        <file>darkolivegreen8.png</file>
+        <file>darkolivegreen9.png</file>
+        <file>firebrick1.png</file>
+        <file>firebrick2.png</file>
+        <file>firebrick3.png</file>
+        <file>firebrick4.png</file>
+        <file>firebrick5.png</file>
+        <file>firebrick6.png</file>
+        <file>firebrick7.png</file>
+        <file>firebrick8.png</file>
+        <file>firebrick9.png</file>
+        <file>road1.png</file>
+        <file>but1.png</file>
+        <file>but2.png</file>
+        <file>menu.png</file>
     </qresource>
 </RCC>

@@ -1,7 +1,6 @@
 import QtQuick 2.7
 import QtQuick.Controls 2.2
 import QtQuick.Layouts 1.3
-import QtQuick.Controls.Material 2.2
 
 ApplicationWindow {
     visible: true
@@ -21,40 +20,64 @@ ApplicationWindow {
 
         Page {
             Item {
+                Image {
+                    id: menush
+        //            anchors.fill: parent
+                    x: 72
+                    y: 160
+                    z: 0
+                    width: 216
+                    height: 263
+                    source: "/menu.png"
+                }
+
                 ColumnLayout {
-                x: 80
-                y: 160
-                width: 200
-                height: 200
+                x: 107
+                y: 279
+                width: 148
+                height: 105
 
                     Button {
                         id: button
-                        text: qsTr("Go")
-                        Material.background: "#FFCC80"
                         Layout .fillWidth: true
                         Layout .fillHeight: true
                         Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
-                        onClicked: {qmlStartEngine()}
+                        onClicked: {qmlGenerateField(); qmlStartEngine();}
+                        onPressedChanged: {
+                                if( pressed ) {
+                                    opacity = 0.75
+                                }
+                                else {
+                                    opacity = 1
+                                }
+                            }
+
+                        Image {
+                            id: but1
+                            anchors.fill: parent
+                            source: "/but1.png"
+                        }
                     }
 
                     Button {
                         id: button1
-                        text: qsTr("Generate")
-                        Material.background: "#FFCC80"
                         Layout .fillWidth: true
                         Layout .fillHeight: true
                         Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
-                        onClicked: {qmlGenerateField()}
-                    }
+                        onPressedChanged: {
+                                if( pressed ) {
+                                    opacity = 0.75
+                                }
+                                else {
+                                    opacity = 1
+                                }
+                            }
 
-                    Button {
-                        id: button2
-                        text: qsTr("Quit")
-                        Material.background: "#FFCC80"
-                        Layout .fillWidth: true
-                        Layout .fillHeight: true
-                        Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
-                        onClicked: {Qt.quit()}
+                        Image {
+                            id: but2
+                            anchors.fill: parent
+                            source: "/but2.png"
+                        }
                     }
                 }
             }
@@ -74,24 +97,30 @@ ApplicationWindow {
                     model: 576
 
                     function changecolor(pos, msg) {
-                        mmm.itemAt(pos).color = msg;
+//                        mmm.itemAt(pos).color = msg; //Math.floor(Math.random() * (24 + 1)).toString()
+                        mmm.itemAt(pos).children[0].source = "/" + msg + ".png"
+                        mmm.itemAt(pos).children[0].sourceChanged()
                     }
 
                     function createsoldier(pos) {
                         if (pos < 288) {
                             var component = Qt.createComponent("Soldier1.qml");
-                            component.createObject(page);
+                            component.createObject(page, {"x": 20*(pos%18), "y": 20*Math.floor(pos/18)});
                         }
                         else {
                             var component2 = Qt.createComponent("Soldier2.qml");
-                            component2.createObject(page);
+                            component2.createObject(page, {"x": 20*(pos%18), "y": 20*Math.floor(pos/18)});
                         }
                         }
 
                     Rectangle {
                         width: 20
                         height: 20
-                        color: "#FFCC80"
+                        color: "black"
+
+                        Image {
+                            anchors.fill: parent
+                        }
 
                         MouseArea {
                             anchors.fill: parent
@@ -127,19 +156,20 @@ ApplicationWindow {
         }
     }
 
-    footer: TabBar {
-        id: tabBar
-        currentIndex: swipeView.currentIndex
-        contentHeight: 47
+//    footer: TabBar {
+//        id: tabBar
+//        currentIndex: swipeView.currentIndex
+//        contentHeight: 47
+//        opacity: 0.2
 
-        TabButton {
-            text: qsTr("Menu")
-        }
-        TabButton {
-            text: qsTr("Field")
-        }
-        TabButton {
-            text: qsTr("Log")
-        }
-    }
+//        TabButton {
+//            text: qsTr("Menu")
+//        }
+//        TabButton {
+//            text: qsTr("Field")
+//        }
+//        TabButton {
+//            text: qsTr("Log")
+//        }
+//    }
 }
