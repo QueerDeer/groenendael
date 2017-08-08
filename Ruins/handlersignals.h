@@ -4,6 +4,7 @@
 #include <QObject>
 #include <QVariant>
 #include <QDebug>
+#include <QVector>
 #include <cstdlib>
 #include <stdio.h>      /* printf, NULL */
 #include <stdlib.h>     /* srand, rand */
@@ -25,6 +26,9 @@ public slots:
 
 private:
     int field [32][18];
+    QVector<int> sorc1;
+    QVector<int> sorc2;
+    int sorcIDMaker = 1;
 
 };
 

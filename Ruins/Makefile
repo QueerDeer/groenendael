@@ -630,24 +630,28 @@ compiler_rcc_clean:
 	-$(DEL_FILE) qrc_qml.cpp
 qrc_qml.cpp: qml.qrc \
 		../Qt/5.9/android_armv7/bin/rcc \
+		goblin_idle.png \
+		goblin_run.png \
+		templar_3_idle.png \
 		qtquickcontrols2.conf \
 		Soldier1.qml \
 		Soldier2.qml \
 		but1.png \
 		but2.png \
+		goblin_death.png \
+		goblin_attack.png \
 		darkolivegreen1.png \
-		sold1.png \
 		darkolivegreen2.png \
+		templar_walk_animation.png \
 		darkolivegreen3.png \
-		sold2.png \
 		darkolivegreen4.png \
 		firebrick1.png \
 		firebrick2.png \
 		darkolivegreen5.png \
-		darkolivegreen6.png \
 		firebrick3.png \
-		darkolivegreen7.png \
+		darkolivegreen6.png \
 		firebrick4.png \
+		darkolivegreen7.png \
 		menu.png \
 		darkolivegreen8.png \
 		firebrick5.png \
@@ -657,7 +661,9 @@ qrc_qml.cpp: qml.qrc \
 		firebrick8.png \
 		firebrick9.png \
 		road1.png \
-		main.qml
+		main.qml \
+		templar_death_animation.png \
+		templar_3_improved_slash_animation.png
 	/home/groenendael/Qt/5.9/android_armv7/bin/rcc -name qml qml.qrc -o qrc_qml.cpp
 
 compiler_moc_predefs_make_all: moc_predefs.h
@@ -1040,6 +1046,7 @@ moc_handlersignals.cpp: ../Qt/5.9/android_armv7/include/QtCore/QObject \
 		../Qt/5.9/android_armv7/include/QtCore/qsharedpointer.h \
 		../Qt/5.9/android_armv7/include/QtCore/qsharedpointer_impl.h \
 		../Qt/5.9/android_armv7/include/QtCore/QDebug \
+		../Qt/5.9/android_armv7/include/QtCore/QVector \
 		handlersignals.h \
 		moc_predefs.h \
 		../Qt/5.9/android_armv7/bin/moc
@@ -1457,7 +1464,8 @@ main.o: main.cpp ../Qt/5.9/android_armv7/include/QtGui/QGuiApplication \
 		handlersignals.h \
 		../Qt/5.9/android_armv7/include/QtCore/QObject \
 		../Qt/5.9/android_armv7/include/QtCore/QVariant \
-		../Qt/5.9/android_armv7/include/QtCore/QDebug
+		../Qt/5.9/android_armv7/include/QtCore/QDebug \
+		../Qt/5.9/android_armv7/include/QtCore/QVector
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o main.cpp
 
 handlersignals.o: handlersignals.cpp handlersignals.h \
@@ -1831,7 +1839,8 @@ handlersignals.o: handlersignals.cpp handlersignals.h \
 		../Qt/5.9/android_armv7/include/QtCore/qcontiguouscache.h \
 		../Qt/5.9/android_armv7/include/QtCore/qsharedpointer.h \
 		../Qt/5.9/android_armv7/include/QtCore/qsharedpointer_impl.h \
-		../Qt/5.9/android_armv7/include/QtCore/QDebug
+		../Qt/5.9/android_armv7/include/QtCore/QDebug \
+		../Qt/5.9/android_armv7/include/QtCore/QVector
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o handlersignals.o handlersignals.cpp
 
 qrc_qml.o: qrc_qml.cpp 

@@ -16,7 +16,7 @@ ApplicationWindow {
     SwipeView {
         id: swipeView
         anchors.fill: parent
-        currentIndex: tabBar.currentIndex
+//        currentIndex: tabBar.currentIndex
 
         Page {
             Item {
@@ -97,21 +97,21 @@ ApplicationWindow {
                     model: 576
 
                     function changecolor(pos, msg) {
-//                        mmm.itemAt(pos).color = msg; //Math.floor(Math.random() * (24 + 1)).toString()
+                        //                        mmm.itemAt(pos).color = msg; //Math.floor(Math.random() * (24 + 1)).toString()
                         mmm.itemAt(pos).children[0].source = "/" + msg + ".png"
                         mmm.itemAt(pos).children[0].sourceChanged()
                     }
 
-                    function createsoldier(pos) {
+                    function createsoldier(pos, idshka) {
                         if (pos < 288) {
                             var component = Qt.createComponent("Soldier1.qml");
-                            component.createObject(page, {"x": 20*(pos%18), "y": 20*Math.floor(pos/18)});
+                            component.createObject(page, {"x": 20*(pos%18), "y": 20*Math.floor(pos/18), "id":idshka, "objectName":idshka});
                         }
                         else {
                             var component2 = Qt.createComponent("Soldier2.qml");
-                            component2.createObject(page, {"x": 20*(pos%18), "y": 20*Math.floor(pos/18)});
+                            component2.createObject(page, {"x": 20*(pos%18), "y": 20*Math.floor(pos/18), "id":idshka, "objectName":idshka});
                         }
-                        }
+                    }
 
                     Rectangle {
                         width: 20
