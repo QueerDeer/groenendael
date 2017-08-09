@@ -11,14 +11,14 @@ Item {
         }
 
         AnimatedSprite {
-            width: 20
+            width: 15
             height: 20
             anchors.centerIn: parent
-            source: "/goblin_idle.png"
-            frameCount: 3
-            frameRate: 5
-            frameWidth: 672
-            frameHeight: 672
+            source: "/Skeleton_Idle.png"
+            frameCount: 11
+            frameRate: 11
+            frameWidth: 24
+            frameHeight: 32
             running: true
         }
     }

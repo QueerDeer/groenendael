@@ -28,6 +28,8 @@ private:
     int field [32][18];
     QVector<int> sorc1;
     QVector<int> sorc2;
+    QVector<int> trees;
+    int treeID = 1;
     int sorcIDMaker = 1;
 
 };

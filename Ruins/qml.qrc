@@ -4,15 +4,6 @@
         <file>qtquickcontrols2.conf</file>
         <file>Soldier1.qml</file>
         <file>Soldier2.qml</file>
-        <file>darkolivegreen1.png</file>
-        <file>darkolivegreen2.png</file>
-        <file>darkolivegreen3.png</file>
-        <file>darkolivegreen4.png</file>
-        <file>darkolivegreen5.png</file>
-        <file>darkolivegreen6.png</file>
-        <file>darkolivegreen7.png</file>
-        <file>darkolivegreen8.png</file>
-        <file>darkolivegreen9.png</file>
         <file>firebrick1.png</file>
         <file>firebrick2.png</file>
         <file>firebrick3.png</file>
@@ -26,13 +17,22 @@
         <file>but1.png</file>
         <file>but2.png</file>
         <file>menu.png</file>
-        <file>goblin_attack.png</file>
-        <file>goblin_death.png</file>
-        <file>goblin_idle.png</file>
-        <file>goblin_run.png</file>
         <file>templar_3_idle.png</file>
         <file>templar_3_improved_slash_animation.png</file>
         <file>templar_death_animation.png</file>
         <file>templar_walk_animation.png</file>
+        <file>Skeleton_Attack.png</file>
+        <file>Skeleton_Dead.png</file>
+        <file>Skeleton_Idle.png</file>
+        <file>Skeleton_Walk.png</file>
+        <file>road2.png</file>
+        <file>road3.png</file>
+        <file>road4.png</file>
+        <file>road5.png</file>
+        <file>tree1.png</file>
+        <file>tree2.png</file>
+        <file>tree3.png</file>
+        <file>tree4.png</file>
+        <file>Tree.qml</file>
     </qresource>
 </RCC>

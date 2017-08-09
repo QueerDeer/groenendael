@@ -40,7 +40,7 @@ void HandlerSignals::engine() {
 
 void HandlerSignals::generation() {
 
-    //deleteAllSoldiers();
+    //reset();
     for (int s1 = 0; s1 < sorc1.size(); ++s1) {
         QObject* sold1 = this->parent()->findChild<QObject*>("f" + QString::number(sorc1.at(s1)));
         QMetaObject::invokeMethod(sold1, "hello");
@@ -49,8 +49,13 @@ void HandlerSignals::generation() {
         QObject* sold2 = this->parent()->findChild<QObject*>("f" + QString::number(sorc2.at(s2)));
         QMetaObject::invokeMethod(sold2, "hello");
     }
+    for (int t = 0; t < trees.size(); ++t) {
+        QObject* treee = this->parent()->findChild<QObject*>("t" + QString::number(trees.at(t)));
+        QMetaObject::invokeMethod(treee, "hello");
+    }
     sorc1.clear();
     sorc2.clear();
+    trees.clear();
 
     for (auto i = 0; i < 32; i+=2)
     {
@@ -79,7 +84,7 @@ void HandlerSignals::generation() {
         for (auto n = 0; n < 18; ++n)
         {
             if (field[m][n] == 0)
-                changeField("road1", QString::number(m*18 + n));
+                changeField("road" + QString::number(rand() % 5 + 1), QString::number(m*18 + n));
 
             if (field[m][n] == 1)
                 changeField("firebrick5", QString::number(m*18 + n));
@@ -103,24 +108,14 @@ void HandlerSignals::generation() {
                 changeField("firebrick3", QString::number(m*18 + n));
 
             if (field[m][n] == 2)
-                changeField("darkolivegreen5", QString::number(m*18 + n));
-
-            if (field[m][n] == 2 && field[m-1][n] != 2)
-                changeField("darkolivegreen8", QString::number(m*18 + n));
-            if (field[m][n] == 2 && field[m+1][n] != 2)
-                changeField("darkolivegreen2", QString::number(m*18 + n));
-            if (field[m][n] == 2 && field[m][n-1] != 2)
-                changeField("darkolivegreen6", QString::number(m*18 + n));
-            if (field[m][n] == 2 && field[m][n+1] != 2)
-                changeField("darkolivegreen4", QString::number(m*18 + n));
-
-            if (field[m][n] == 2 && field[m-1][n] != 2 && field[m][n-1] != 2)
-                changeField("darkolivegreen9", QString::number(m*18 + n));
-            if (field[m][n] == 2 && field[m+1][n] != 2 && field[m][n+1] != 2)
-                changeField("darkolivegreen1", QString::number(m*18 + n));
-            if (field[m][n] == 2 && field[m][n-1] != 2 && field[m+1][n] != 2)
-                changeField("darkolivegreen3", QString::number(m*18 + n));
-            if (field[m][n] == 2 && field[m][n+1] != 2 && field[m-1][n] != 2)
-                changeField("darkolivegreen7", QString::number(m*18 + n));
+            {
+                changeField("road" + QString::number(rand() % 5 + 1), QString::number(m*18 + n));
+                trees.append(treeID);
+                QObject* mmm = this->parent()->findChild<QObject*>("mmm");
+                QMetaObject::invokeMethod(mmm, "createtree", Q_ARG(QVariant, QString::number(m*18 + n)), Q_ARG(QVariant, "t"+ QString::number(treeID)));
+                QObject* treee = this->parent()->findChild<QObject*>("t" + QString::number(treeID));
+                treee->children()[0]->children()[0]->setProperty("source", "qrc:/tree" + QString::number(rand() % 4 + 1) + ".png");
+                treeID++;
+            }
         }
 }

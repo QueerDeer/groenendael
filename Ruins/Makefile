@@ -630,39 +630,39 @@ compiler_rcc_clean:
 	-$(DEL_FILE) qrc_qml.cpp
 qrc_qml.cpp: qml.qrc \
 		../Qt/5.9/android_armv7/bin/rcc \
-		goblin_idle.png \
-		goblin_run.png \
 		templar_3_idle.png \
 		qtquickcontrols2.conf \
+		tree1.png \
 		Soldier1.qml \
+		tree2.png \
 		Soldier2.qml \
+		tree3.png \
+		Tree.qml \
+		tree4.png \
 		but1.png \
 		but2.png \
-		goblin_death.png \
-		goblin_attack.png \
-		darkolivegreen1.png \
-		darkolivegreen2.png \
+		Skeleton_Walk.png \
 		templar_walk_animation.png \
-		darkolivegreen3.png \
-		darkolivegreen4.png \
 		firebrick1.png \
 		firebrick2.png \
-		darkolivegreen5.png \
 		firebrick3.png \
-		darkolivegreen6.png \
+		Skeleton_Dead.png \
 		firebrick4.png \
-		darkolivegreen7.png \
 		menu.png \
-		darkolivegreen8.png \
+		Skeleton_Idle.png \
 		firebrick5.png \
-		darkolivegreen9.png \
 		firebrick6.png \
 		firebrick7.png \
 		firebrick8.png \
 		firebrick9.png \
 		road1.png \
 		main.qml \
+		road2.png \
 		templar_death_animation.png \
+		road3.png \
+		Skeleton_Attack.png \
+		road4.png \
+		road5.png \
 		templar_3_improved_slash_animation.png
 	/home/groenendael/Qt/5.9/android_armv7/bin/rcc -name qml qml.qrc -o qrc_qml.cpp
 

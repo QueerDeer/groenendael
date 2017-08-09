@@ -16,13 +16,14 @@ ApplicationWindow {
     SwipeView {
         id: swipeView
         anchors.fill: parent
-//        currentIndex: tabBar.currentIndex
+        orientation: Qt.Vertical
+        interactive:false
+        currentIndex: 0
 
         Page {
             Item {
                 Image {
                     id: menush
-        //            anchors.fill: parent
                     x: 72
                     y: 160
                     z: 0
@@ -32,25 +33,36 @@ ApplicationWindow {
                 }
 
                 ColumnLayout {
-                x: 107
-                y: 279
-                width: 148
-                height: 105
+                    x: 107
+                    y: 279
+                    width: 148
+                    height: 105
 
                     Button {
                         id: button
                         Layout .fillWidth: true
                         Layout .fillHeight: true
                         Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
-                        onClicked: {qmlGenerateField(); qmlStartEngine();}
+                        onClicked: {
+                            qmlGenerateField();
+                            qmlStartEngine();
+                            swipeView.interactive = true;
+                            timer.running = true;
+                        }
                         onPressedChanged: {
-                                if( pressed ) {
-                                    opacity = 0.75
-                                }
-                                else {
-                                    opacity = 1
-                                }
+                            if( pressed ) {
+                                opacity = 0.75
                             }
+                            else {
+                                opacity = 1
+                            }
+                        }
+
+                        Timer {
+                            id: timer
+                            interval: 2000; running: false; repeat: false
+                            onTriggered: swipeView.currentIndex = 1
+                        }
 
                         Image {
                             id: but1
@@ -65,13 +77,13 @@ ApplicationWindow {
                         Layout .fillHeight: true
                         Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
                         onPressedChanged: {
-                                if( pressed ) {
-                                    opacity = 0.75
-                                }
-                                else {
-                                    opacity = 1
-                                }
+                            if( pressed ) {
+                                opacity = 0.75
                             }
+                            else {
+                                opacity = 1
+                            }
+                        }
 
                         Image {
                             id: but2
@@ -105,12 +117,17 @@ ApplicationWindow {
                     function createsoldier(pos, idshka) {
                         if (pos < 288) {
                             var component = Qt.createComponent("Soldier1.qml");
-                            component.createObject(page, {"x": 20*(pos%18), "y": 20*Math.floor(pos/18), "id":idshka, "objectName":idshka});
+                            component.createObject(page, {"x": 20*(pos%18)-5, "y": 20*Math.floor(pos/18)-10, "id":idshka, "objectName":idshka});
                         }
                         else {
                             var component2 = Qt.createComponent("Soldier2.qml");
-                            component2.createObject(page, {"x": 20*(pos%18), "y": 20*Math.floor(pos/18), "id":idshka, "objectName":idshka});
+                            component2.createObject(page, {"x": 20*(pos%18), "y": 20*Math.floor(pos/18)-5, "id":idshka, "objectName":idshka});
                         }
+                    }
+
+                    function createtree (pos, idshka) {
+                        var component3 = Qt.createComponent("Tree.qml");
+                        component3.createObject(page, {"x": 20*(pos%18)-10, "y": 20*Math.floor(pos/18)-30, "id":idshka, "objectName":idshka});
                     }
 
                     Rectangle {
@@ -133,43 +150,6 @@ ApplicationWindow {
             }
         }
 
-        Page {
-            Item {
-                width: 360
-                height: 640
-
-                ScrollView {
-                    id: scrollView
-                    x: 59
-                    y: 8
-                    width: 293
-                    height: 572
-
-                    TextArea {
-                        id: textArea
-                        text: qsTr("Log\nLog\nLog\nLog\nLog\nLog\nLog\nLog\nLog\nLog\nLog\nLog\nLog\nLog\nLog\nLog\nLog\nLog\nLog\nLog\nLog\nLog\nLog\nLog\nLog\nLog\nLog\nLog\nLog\nLog\nLog\nLog\nLog\nLog\nLog\nLog\nLog\nLog\nLog\nLog\nLog\nLog\nLog\nLog\nLog\nLog\nLog\nLog\nLog\nLog\nLog\nLog\nLog\nLog\nLog\nLog\nLog\nLog\nLog\nLog\n")
-                        readOnly: true
-                    }
-                }
-            }
-
-        }
     }
 
-//    footer: TabBar {
-//        id: tabBar
-//        currentIndex: swipeView.currentIndex
-//        contentHeight: 47
-//        opacity: 0.2
-
-//        TabButton {
-//            text: qsTr("Menu")
-//        }
-//        TabButton {
-//            text: qsTr("Field")
-//        }
-//        TabButton {
-//            text: qsTr("Log")
-//        }
-//    }
 }

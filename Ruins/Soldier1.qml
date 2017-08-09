@@ -2,8 +2,8 @@ import QtQuick 2.0
 
 Item {
     Rectangle {
-        width: 20
-        height: 20
+        width: 30
+        height: 30
         color: "transparent"
 
         MouseArea {
@@ -11,8 +11,8 @@ Item {
         }
 
         AnimatedSprite {
-            width: 20
-            height: 20
+            width: 30
+            height: 30
             anchors.centerIn: parent
             source: "/templar_3_idle.png"
             frameCount: 4
