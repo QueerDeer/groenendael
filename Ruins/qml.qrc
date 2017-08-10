@@ -34,5 +34,9 @@
         <file>tree3.png</file>
         <file>tree4.png</file>
         <file>Tree.qml</file>
+        <file>sorcerer_villain_cast.png</file>
+        <file>sorcerer_villain_idle.png</file>
+        <file>Sorcerer1.qml</file>
+        <file>Sorcerer2.qml</file>
     </qresource>
 </RCC>

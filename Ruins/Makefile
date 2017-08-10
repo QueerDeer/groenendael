@@ -630,40 +630,44 @@ compiler_rcc_clean:
 	-$(DEL_FILE) qrc_qml.cpp
 qrc_qml.cpp: qml.qrc \
 		../Qt/5.9/android_armv7/bin/rcc \
-		templar_3_idle.png \
-		qtquickcontrols2.conf \
-		tree1.png \
-		Soldier1.qml \
-		tree2.png \
-		Soldier2.qml \
-		tree3.png \
-		Tree.qml \
-		tree4.png \
-		but1.png \
-		but2.png \
-		Skeleton_Walk.png \
-		templar_walk_animation.png \
-		firebrick1.png \
-		firebrick2.png \
-		firebrick3.png \
-		Skeleton_Dead.png \
-		firebrick4.png \
-		menu.png \
-		Skeleton_Idle.png \
-		firebrick5.png \
-		firebrick6.png \
 		firebrick7.png \
-		firebrick8.png \
-		firebrick9.png \
-		road1.png \
+		but1.png \
+		sorcerer_villain_cast.png \
+		firebrick6.png \
+		qtquickcontrols2.conf \
+		templar_3_idle.png \
+		firebrick5.png \
+		firebrick4.png \
+		tree4.png \
 		main.qml \
-		road2.png \
-		templar_death_animation.png \
-		road3.png \
 		Skeleton_Attack.png \
-		road4.png \
+		menu.png \
+		templar_death_animation.png \
+		firebrick3.png \
+		tree3.png \
+		Skeleton_Dead.png \
 		road5.png \
-		templar_3_improved_slash_animation.png
+		Soldier2.qml \
+		firebrick2.png \
+		tree2.png \
+		Tree.qml \
+		road4.png \
+		Soldier1.qml \
+		firebrick1.png \
+		tree1.png \
+		road3.png \
+		templar_3_improved_slash_animation.png \
+		Sorcerer2.qml \
+		Skeleton_Walk.png \
+		firebrick9.png \
+		road2.png \
+		Sorcerer1.qml \
+		templar_walk_animation.png \
+		Skeleton_Idle.png \
+		firebrick8.png \
+		sorcerer_villain_idle.png \
+		road1.png \
+		but2.png
 	/home/groenendael/Qt/5.9/android_armv7/bin/rcc -name qml qml.qrc -o qrc_qml.cpp
 
 compiler_moc_predefs_make_all: moc_predefs.h

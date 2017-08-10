@@ -1,7 +1,5 @@
 #include "handlersignals.h"
 
-int field [32][18];
-
 HandlerSignals::HandlerSignals(QObject *parent) : QObject(parent)
 {
 
@@ -14,10 +12,10 @@ void HandlerSignals::changeField(const QString &msg, const QString &pos) {
 }
 
 void HandlerSignals::createSoldier(const QString &pos) {
-    if (field[pos.toInt() / 18][pos.toInt() % 18] != 1)
+    if (field[pos.toInt() / 24][pos.toInt() % 24] != 1)
     {
         qDebug() << pos;
-        if (pos < 288)
+        if (pos < 528)
         {
             sorc1.append(sorcIDMaker);
             QObject* mmm = this->parent()->findChild<QObject*>("mmm");
@@ -57,9 +55,14 @@ void HandlerSignals::generation() {
     sorc2.clear();
     trees.clear();
 
-    for (auto i = 0; i < 32; i+=2)
+    QObject* sorca1 = this->parent()->findChild<QObject*>("sorcerer1");
+    QMetaObject::invokeMethod(sorca1, "hello");
+    QObject* sorca2 = this->parent()->findChild<QObject*>("sorcerer2");
+    QMetaObject::invokeMethod(sorca2, "hello");
+
+    for (auto i = 0; i < 44; i+=2)
     {
-        for (auto j = 0; j < 18; j+=2)
+        for (auto j = 0; j < 24; j+=2)
         {
             if (rand() % 4)
             {
@@ -80,42 +83,45 @@ void HandlerSignals::generation() {
         }
     }
 
-    for (auto m = 0; m < 32; ++m)
-        for (auto n = 0; n < 18; ++n)
+    for (auto m = 0; m < 44; ++m)
+        for (auto n = 0; n < 24; ++n)
         {
             if (field[m][n] == 0)
-                changeField("road" + QString::number(rand() % 5 + 1), QString::number(m*18 + n));
+                changeField("road" + QString::number(rand() % 5 + 1), QString::number(m*24 + n));
 
             if (field[m][n] == 1)
-                changeField("firebrick5", QString::number(m*18 + n));
+                changeField("firebrick5", QString::number(m*24 + n));
 
             if (field[m][n] == 1 && field[m-1][n] != 1)
-                changeField("firebrick2", QString::number(m*18 + n));
+                changeField("firebrick2", QString::number(m*24 + n));
             if (field[m][n] == 1 && field[m+1][n] != 1)
-                changeField("firebrick8", QString::number(m*18 + n));
+                changeField("firebrick8", QString::number(m*24 + n));
             if (field[m][n] == 1 && field[m][n-1] != 1)
-                changeField("firebrick4", QString::number(m*18 + n));
+                changeField("firebrick4", QString::number(m*24 + n));
             if (field[m][n] == 1 && field[m][n+1] != 1)
-                changeField("firebrick6", QString::number(m*18 + n));
+                changeField("firebrick6", QString::number(m*24 + n));
 
             if (field[m][n] == 1 && field[m-1][n] != 1 && field[m][n-1] != 1)
-                changeField("firebrick1", QString::number(m*18 + n));
+                changeField("firebrick1", QString::number(m*24 + n));
             if (field[m][n] == 1 && field[m+1][n] != 1 && field[m][n+1] != 1)
-                changeField("firebrick9", QString::number(m*18 + n));
+                changeField("firebrick9", QString::number(m*24 + n));
             if (field[m][n] == 1 && field[m][n-1] != 1 && field[m+1][n] != 1)
-                changeField("firebrick7", QString::number(m*18 + n));
+                changeField("firebrick7", QString::number(m*24 + n));
             if (field[m][n] == 1 && field[m][n+1] != 1 && field[m-1][n] != 1)
-                changeField("firebrick3", QString::number(m*18 + n));
+                changeField("firebrick3", QString::number(m*24 + n));
 
             if (field[m][n] == 2)
             {
-                changeField("road" + QString::number(rand() % 5 + 1), QString::number(m*18 + n));
+                changeField("road" + QString::number(rand() % 5 + 1), QString::number(m*24 + n));
                 trees.append(treeID);
                 QObject* mmm = this->parent()->findChild<QObject*>("mmm");
-                QMetaObject::invokeMethod(mmm, "createtree", Q_ARG(QVariant, QString::number(m*18 + n)), Q_ARG(QVariant, "t"+ QString::number(treeID)));
+                QMetaObject::invokeMethod(mmm, "createtree", Q_ARG(QVariant, QString::number(m*24 + n)), Q_ARG(QVariant, "t"+ QString::number(treeID)));
                 QObject* treee = this->parent()->findChild<QObject*>("t" + QString::number(treeID));
                 treee->children()[0]->children()[0]->setProperty("source", "qrc:/tree" + QString::number(rand() % 4 + 1) + ".png");
                 treeID++;
             }
         }
+
+    QObject* mmm = this->parent()->findChild<QObject*>("mmm");
+    QMetaObject::invokeMethod(mmm, "createsorcerers");
 }

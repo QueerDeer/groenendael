@@ -25,7 +25,7 @@ public slots:
     void createSoldier(const QString &pos);
 
 private:
-    int field [32][18];
+    int field [44][24];
     QVector<int> sorc1;
     QVector<int> sorc2;
     QVector<int> trees;

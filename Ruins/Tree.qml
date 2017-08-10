@@ -2,8 +2,8 @@ import QtQuick 2.0
 
 Item {
     Rectangle {
-        width: 40
-        height: 40
+        width: 50
+        height: 50
         color: "transparent"
 
         Image {

@@ -16,7 +16,7 @@ Item {
             anchors.centerIn: parent
             source: "/Skeleton_Idle.png"
             frameCount: 11
-            frameRate: 11
+            frameRate: 12
             frameWidth: 24
             frameHeight: 32
             running: true

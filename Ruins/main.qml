@@ -98,15 +98,20 @@ ApplicationWindow {
 
         Page {
             id:page
+            contentHeight: 640
+            contentWidth: 720
+            ScrollView {
+                anchors.fill: parent
             Grid {
-                columns: 18
-                rows: 32
+                id: pagee
+                columns: 24
+                rows: 44
                 spacing: 0
 
                 Repeater {
                     id:mmm
                     objectName: "mmm"
-                    model: 576
+                    model: 1056
 
                     function changecolor(pos, msg) {
                         //                        mmm.itemAt(pos).color = msg; //Math.floor(Math.random() * (24 + 1)).toString()
@@ -115,24 +120,31 @@ ApplicationWindow {
                     }
 
                     function createsoldier(pos, idshka) {
-                        if (pos < 288) {
+                        if (pos < 528) {
                             var component = Qt.createComponent("Soldier1.qml");
-                            component.createObject(page, {"x": 20*(pos%18)-5, "y": 20*Math.floor(pos/18)-10, "id":idshka, "objectName":idshka});
+                            component.createObject(pagee, {"x": 30*(pos%24), "y": 30*Math.floor(pos/24)-5, "id":idshka, "objectName":idshka});
                         }
                         else {
                             var component2 = Qt.createComponent("Soldier2.qml");
-                            component2.createObject(page, {"x": 20*(pos%18), "y": 20*Math.floor(pos/18)-5, "id":idshka, "objectName":idshka});
+                            component2.createObject(pagee, {"x": 30*(pos%24)+5, "y": 30*Math.floor(pos/24), "id":idshka, "objectName":idshka});
                         }
                     }
 
                     function createtree (pos, idshka) {
                         var component3 = Qt.createComponent("Tree.qml");
-                        component3.createObject(page, {"x": 20*(pos%18)-10, "y": 20*Math.floor(pos/18)-30, "id":idshka, "objectName":idshka});
+                        component3.createObject(pagee, {"x": 30*(pos%24)-10, "y": 30*Math.floor(pos/24)-35, "id":idshka, "objectName":idshka});
+                    }
+
+                    function createsorcerers () {
+                        var component4 = Qt.createComponent("Sorcerer1.qml");
+                        component4.createObject(pagee);
+                        var component5 = Qt.createComponent("Sorcerer2.qml");
+                        component5.createObject(pagee);
                     }
 
                     Rectangle {
-                        width: 20
-                        height: 20
+                        width: 30
+                        height: 30
                         color: "black"
 
                         Image {
@@ -148,8 +160,8 @@ ApplicationWindow {
                 }
 
             }
-        }
+}
+        }//page
 
     }
-
 }
