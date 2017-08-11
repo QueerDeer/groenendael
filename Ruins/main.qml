@@ -22,19 +22,23 @@ ApplicationWindow {
 
         Page {
             Item {
+                anchors.centerIn: parent
+
                 Image {
                     id: menush
-                    x: 72
-                    y: 160
                     z: 0
                     width: 216
                     height: 263
                     source: "/menu.png"
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    anchors.verticalCenter: parent.verticalCenter
                 }
 
                 ColumnLayout {
-                    x: 107
-                    y: 279
+                    x: -73
+                    y: -13
+                    //anchors.horizontalCenter: parent.horizontalCenter
+                    //anchors.verticalCenter: parent.verticalCenter
                     width: 148
                     height: 105
 
@@ -76,6 +80,7 @@ ApplicationWindow {
                         Layout .fillWidth: true
                         Layout .fillHeight: true
                         Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
+                        onClicked: dialog.open()
                         onPressedChanged: {
                             if( pressed ) {
                                 opacity = 0.75
@@ -94,6 +99,28 @@ ApplicationWindow {
                 }
             }
 
+            Dialog {
+                id: dialog
+                title: qsTr("TEAM")
+                modal: true
+                width:360
+                height:240
+                Label {
+                    anchors.fill: parent
+                    width: parent.width
+                    height: parent.height / 20
+                    horizontalAlignment: Text.AlignHCenter
+                    verticalAlignment: Text.AlignVCenter
+                    wrapMode: Text.WordWrap
+                    anchors.topMargin: 5
+                    anchors.bottomMargin: 5
+                    text: "Warren Clark Twitter/ @WoostarsPixels - dark sorcerer, summoning wizard and fallen knight sprites
+Jesse M Twitter/ @Jsf23Art - resurrected skeleton warrior sprite
+Vendet Forum.HellRoom.ru/ Vendet - diff planescape tiles
+Groenendael Twitter/ @ThatGuyWithAx - game development and soundtrack"
+                }
+            }
+
         }
 
         Page {
@@ -102,6 +129,8 @@ ApplicationWindow {
             contentWidth: 720
             ScrollView {
                 anchors.fill: parent
+                ScrollBar.horizontal.policy: ScrollBar.AlwaysOff
+                ScrollBar.vertical.policy: ScrollBar.AlwaysOff
             Grid {
                 id: pagee
                 columns: 24

@@ -1,10 +1,10 @@
 import QtQuick 2.0
 
 Item {
-    id:sorcerer2
-    objectName:sorcerer2
+    id:sorcer2
+    objectName:"sorcer2"
     x: 0
-    y: 1210
+    y: 1228
 
     Rectangle {
         width: 80

@@ -55,9 +55,9 @@ void HandlerSignals::generation() {
     sorc2.clear();
     trees.clear();
 
-    QObject* sorca1 = this->parent()->findChild<QObject*>("sorcerer1");
+    QObject* sorca1 = this->parent()->findChild<QObject*>("sorcer1");
     QMetaObject::invokeMethod(sorca1, "hello");
-    QObject* sorca2 = this->parent()->findChild<QObject*>("sorcerer2");
+    QObject* sorca2 = this->parent()->findChild<QObject*>("sorcer2");
     QMetaObject::invokeMethod(sorca2, "hello");
 
     for (auto i = 0; i < 44; i+=2)
@@ -116,6 +116,7 @@ void HandlerSignals::generation() {
                 trees.append(treeID);
                 QObject* mmm = this->parent()->findChild<QObject*>("mmm");
                 QMetaObject::invokeMethod(mmm, "createtree", Q_ARG(QVariant, QString::number(m*24 + n)), Q_ARG(QVariant, "t"+ QString::number(treeID)));
+                //очень важная херабора в две строки, ей можно делать реплэйсмент координат и смену сурсов тайлов
                 QObject* treee = this->parent()->findChild<QObject*>("t" + QString::number(treeID));
                 treee->children()[0]->children()[0]->setProperty("source", "qrc:/tree" + QString::number(rand() % 4 + 1) + ".png");
                 treeID++;

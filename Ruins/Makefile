@@ -644,6 +644,7 @@ qrc_qml.cpp: qml.qrc \
 		menu.png \
 		templar_death_animation.png \
 		firebrick3.png \
+		summoner_idle_animation.png \
 		tree3.png \
 		Skeleton_Dead.png \
 		road5.png \
