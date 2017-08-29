@@ -1,10 +1,12 @@
-import QtQuick 2.0
+import QtQuick 2.7
 
 Item {
+    z: 0
     Rectangle {
         width: 20
         height: 20
         color: "transparent"
+        opacity: 0
 
         MouseArea {
             anchors.fill: parent
@@ -21,11 +23,20 @@ Item {
             frameHeight: 32
             running: true
         }
+
+        OpacityAnimator on opacity{
+                from: 0;
+                to: 1;
+                duration: 3000
+                running: true
+                easing.type: Easing.InCubic
+            }
     }
 
     function hello ()
     {
         visible = false;
+        this.destroy();
         console.log(objectName);
     }
 }

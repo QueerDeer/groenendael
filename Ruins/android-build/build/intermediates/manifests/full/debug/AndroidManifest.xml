@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="org.qtproject.example.Ruins"
+    package="groenendael.qtproject.ruins"
     android:installLocation="auto"
     android:versionCode="1"
     android:versionName="1.0" >
@@ -34,11 +34,12 @@
     <application
         android:name="org.qtproject.qt5.android.bindings.QtApplication"
         android:hardwareAccelerated="true"
-        android:label="Ruins" >
+        android:icon="@drawable/icon"
+        android:label="RUINS" >
         <activity
             android:name="org.qtproject.qt5.android.bindings.QtActivity"
             android:configChanges="orientation|uiMode|screenLayout|screenSize|smallestScreenSize|layoutDirection|locale|fontScale|keyboard|keyboardHidden|navigation"
-            android:label="Ruins"
+            android:label="RUINS"
             android:launchMode="singleTop"
             android:screenOrientation="unspecified" >
             <intent-filter>

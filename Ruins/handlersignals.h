@@ -9,6 +9,8 @@
 #include <stdio.h>      /* printf, NULL */
 #include <stdlib.h>     /* srand, rand */
 #include <time.h>       /* time */
+#include <QEventLoop>
+#include <QTimer>
 
 class HandlerSignals : public QObject
 {
@@ -23,6 +25,8 @@ public slots:
     void generation();
     void engine();
     void createSoldier(const QString &pos);
+    void changeAnimation(const QString &name, const QString &anim, const QString &pos, const QString &idshka);
+
 
 private:
     int field [44][24];

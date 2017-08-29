@@ -12,7 +12,7 @@ MAKEFILE      = Makefile
 
 CC            = /home/groenendael/android-ndk-r15b/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/arm-linux-androideabi-gcc
 CXX           = /home/groenendael/android-ndk-r15b/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/arm-linux-androideabi-g++
-DEFINES       = -DQT_DEPRECATED_WARNINGS -DQT_NO_DEBUG -DQT_QUICK_LIB -DQT_GUI_LIB -DQT_QML_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB
+DEFINES       = -DQT_DEPRECATED_WARNINGS -DQT_QML_DEBUG -DQT_NO_DEBUG -DQT_QUICK_LIB -DQT_GUI_LIB -DQT_QML_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB
 CFLAGS        = -fstack-protector-strong -DANDROID -march=armv7-a -mfloat-abi=softfp -mfpu=vfp -fno-builtin-memmove --sysroot=/home/groenendael/android-ndk-r15b/platforms/android-16/arch-arm/ -Os -mthumb -Wall -W -D_REENTRANT -fPIC $(DEFINES)
 CXXFLAGS      = -fstack-protector-strong -DANDROID -march=armv7-a -mfloat-abi=softfp -mfpu=vfp -fno-builtin-memmove --sysroot=/home/groenendael/android-ndk-r15b/platforms/android-16/arch-arm/ -O2 -Os -mthumb -std=gnu++11 -Wall -W -D_REENTRANT -fPIC $(DEFINES)
 INCPATH       = -I. -I../Qt/5.9/android_armv7/include -I../Qt/5.9/android_armv7/include/QtQuick -I../Qt/5.9/android_armv7/include/QtGui -I../Qt/5.9/android_armv7/include/QtQml -I../Qt/5.9/android_armv7/include/QtNetwork -I../Qt/5.9/android_armv7/include/QtCore -I. -I../android-ndk-r15b/sources/cxx-stl/gnu-libstdc++/4.9/include -I../android-ndk-r15b/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a/include -I../android-ndk-r15b/platforms/android-16/arch-arm/usr/include -I../Qt/5.9/android_armv7/mkspecs/android-g++
@@ -58,7 +58,14 @@ OBJECTS       = main.o \
 		handlersignals.o \
 		qrc_qml.o \
 		moc_handlersignals.o
-DIST          = ../Qt/5.9/android_armv7/mkspecs/features/spec_pre.prf \
+DIST          = android/AndroidManifest.xml \
+		android/gradle/wrapper/gradle-wrapper.jar \
+		android/gradlew \
+		android/res/values/libs.xml \
+		android/build.gradle \
+		android/gradle/wrapper/gradle-wrapper.properties \
+		android/gradlew.bat \
+		../Qt/5.9/android_armv7/mkspecs/features/spec_pre.prf \
 		../Qt/5.9/android_armv7/mkspecs/common/unix.conf \
 		../Qt/5.9/android_armv7/mkspecs/common/linux.conf \
 		../Qt/5.9/android_armv7/mkspecs/common/sanitize.conf \
@@ -210,6 +217,7 @@ DIST          = ../Qt/5.9/android_armv7/mkspecs/features/spec_pre.prf \
 		../Qt/5.9/android_armv7/mkspecs/features/default_pre.prf \
 		../Qt/5.9/android_armv7/mkspecs/features/resolve_config.prf \
 		../Qt/5.9/android_armv7/mkspecs/features/default_post.prf \
+		../Qt/5.9/android_armv7/mkspecs/features/qml_debug.prf \
 		../Qt/5.9/android_armv7/mkspecs/features/android/android.prf \
 		../Qt/5.9/android_armv7/mkspecs/features/android/android_deployment_settings.prf \
 		../Qt/5.9/android_armv7/mkspecs/features/warn_on.prf \
@@ -389,6 +397,7 @@ Makefile: Ruins.pro ../Qt/5.9/android_armv7/mkspecs/android-g++/qmake.conf ../Qt
 		../Qt/5.9/android_armv7/mkspecs/features/default_pre.prf \
 		../Qt/5.9/android_armv7/mkspecs/features/resolve_config.prf \
 		../Qt/5.9/android_armv7/mkspecs/features/default_post.prf \
+		../Qt/5.9/android_armv7/mkspecs/features/qml_debug.prf \
 		../Qt/5.9/android_armv7/mkspecs/features/android/android.prf \
 		../Qt/5.9/android_armv7/mkspecs/features/android/android_deployment_settings.prf \
 		../Qt/5.9/android_armv7/mkspecs/features/warn_on.prf \
@@ -563,6 +572,7 @@ Makefile: Ruins.pro ../Qt/5.9/android_armv7/mkspecs/android-g++/qmake.conf ../Qt
 ../Qt/5.9/android_armv7/mkspecs/features/default_pre.prf:
 ../Qt/5.9/android_armv7/mkspecs/features/resolve_config.prf:
 ../Qt/5.9/android_armv7/mkspecs/features/default_post.prf:
+../Qt/5.9/android_armv7/mkspecs/features/qml_debug.prf:
 ../Qt/5.9/android_armv7/mkspecs/features/android/android.prf:
 ../Qt/5.9/android_armv7/mkspecs/features/android/android_deployment_settings.prf:
 ../Qt/5.9/android_armv7/mkspecs/features/warn_on.prf:
@@ -662,6 +672,7 @@ qrc_qml.cpp: qml.qrc \
 		Skeleton_Walk.png \
 		firebrick9.png \
 		road2.png \
+		summoner_fly_animation.png \
 		Sorcerer1.qml \
 		templar_walk_animation.png \
 		Skeleton_Idle.png \
@@ -1052,6 +1063,11 @@ moc_handlersignals.cpp: ../Qt/5.9/android_armv7/include/QtCore/QObject \
 		../Qt/5.9/android_armv7/include/QtCore/qsharedpointer_impl.h \
 		../Qt/5.9/android_armv7/include/QtCore/QDebug \
 		../Qt/5.9/android_armv7/include/QtCore/QVector \
+		../Qt/5.9/android_armv7/include/QtCore/QEventLoop \
+		../Qt/5.9/android_armv7/include/QtCore/qeventloop.h \
+		../Qt/5.9/android_armv7/include/QtCore/QTimer \
+		../Qt/5.9/android_armv7/include/QtCore/qtimer.h \
+		../Qt/5.9/android_armv7/include/QtCore/qbasictimer.h \
 		handlersignals.h \
 		moc_predefs.h \
 		../Qt/5.9/android_armv7/bin/moc
@@ -1470,7 +1486,11 @@ main.o: main.cpp ../Qt/5.9/android_armv7/include/QtGui/QGuiApplication \
 		../Qt/5.9/android_armv7/include/QtCore/QObject \
 		../Qt/5.9/android_armv7/include/QtCore/QVariant \
 		../Qt/5.9/android_armv7/include/QtCore/QDebug \
-		../Qt/5.9/android_armv7/include/QtCore/QVector
+		../Qt/5.9/android_armv7/include/QtCore/QVector \
+		../Qt/5.9/android_armv7/include/QtCore/QEventLoop \
+		../Qt/5.9/android_armv7/include/QtCore/QTimer \
+		../Qt/5.9/android_armv7/include/QtCore/qtimer.h \
+		../Qt/5.9/android_armv7/include/QtCore/qbasictimer.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o main.cpp
 
 handlersignals.o: handlersignals.cpp handlersignals.h \
@@ -1845,7 +1865,12 @@ handlersignals.o: handlersignals.cpp handlersignals.h \
 		../Qt/5.9/android_armv7/include/QtCore/qsharedpointer.h \
 		../Qt/5.9/android_armv7/include/QtCore/qsharedpointer_impl.h \
 		../Qt/5.9/android_armv7/include/QtCore/QDebug \
-		../Qt/5.9/android_armv7/include/QtCore/QVector
+		../Qt/5.9/android_armv7/include/QtCore/QVector \
+		../Qt/5.9/android_armv7/include/QtCore/QEventLoop \
+		../Qt/5.9/android_armv7/include/QtCore/qeventloop.h \
+		../Qt/5.9/android_armv7/include/QtCore/QTimer \
+		../Qt/5.9/android_armv7/include/QtCore/qtimer.h \
+		../Qt/5.9/android_armv7/include/QtCore/qbasictimer.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o handlersignals.o handlersignals.cpp
 
 qrc_qml.o: qrc_qml.cpp 

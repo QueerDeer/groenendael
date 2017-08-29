@@ -39,5 +39,6 @@
         <file>Sorcerer1.qml</file>
         <file>Sorcerer2.qml</file>
         <file>summoner_idle_animation.png</file>
+        <file>summoner_fly_animation.png</file>
     </qresource>
 </RCC>

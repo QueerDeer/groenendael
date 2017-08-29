@@ -12,6 +12,7 @@ ApplicationWindow {
     signal qmlGenerateField()
     signal qmlStartEngine()
     signal qmlCreateSoldier(string pos)
+    signal qmlChangeAnimation(string name, string anim, string pos, string idshka)
 
     SwipeView {
         id: swipeView
@@ -21,6 +22,8 @@ ApplicationWindow {
         currentIndex: 0
 
         Page {
+            contentHeight: 640
+            contentWidth: 720
             Item {
                 anchors.centerIn: parent
 
@@ -104,7 +107,7 @@ ApplicationWindow {
                 title: qsTr("TEAM")
                 modal: true
                 width:360
-                height:240
+                height:360
                 Label {
                     anchors.fill: parent
                     width: parent.width
@@ -150,10 +153,12 @@ Groenendael Twitter/ @ThatGuyWithAx - game development and soundtrack"
 
                     function createsoldier(pos, idshka) {
                         if (pos < 528) {
+                            qmlChangeAnimation("sorcer1", "summoner_fly_animation", pos, idshka)
                             var component = Qt.createComponent("Soldier1.qml");
                             component.createObject(pagee, {"x": 30*(pos%24), "y": 30*Math.floor(pos/24)-5, "id":idshka, "objectName":idshka});
                         }
                         else {
+                            qmlChangeAnimation("sorcer2", "sorcerer_villain_cast", pos, idshka)
                             var component2 = Qt.createComponent("Soldier2.qml");
                             component2.createObject(pagee, {"x": 30*(pos%24)+5, "y": 30*Math.floor(pos/24), "id":idshka, "objectName":idshka});
                         }

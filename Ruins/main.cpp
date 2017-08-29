@@ -30,5 +30,8 @@ int main(int argc, char *argv[])
     QObject::connect(root, SIGNAL(qmlCreateSoldier(QString)),
                      handlerSignals, SLOT(createSoldier(QString)));
 
+    QObject::connect(root, SIGNAL(qmlChangeAnimation(QString, QString, QString, QString)),
+                     handlerSignals, SLOT(changeAnimation(QString, QString, QString, QString)));
+
     return app.exec();
 }

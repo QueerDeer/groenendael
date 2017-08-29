@@ -1,6 +1,7 @@
 import QtQuick 2.0
 
 Item {
+    z: 2
     Rectangle {
         width: 50
         height: 50

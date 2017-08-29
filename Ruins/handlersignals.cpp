@@ -11,6 +11,45 @@ void HandlerSignals::changeField(const QString &msg, const QString &pos) {
     QMetaObject::invokeMethod(mmm, "changecolor", Q_ARG(QVariant, pos), Q_ARG(QVariant, msg));
 }
 
+void HandlerSignals::changeAnimation(const QString &name, const QString &anim, const QString &pos, const QString &idshka) {
+    QObject* planescaper = this->parent()->findChild<QObject*>(name);
+
+    if (name == "sorcer2")
+    {
+//        planescaper->children()[1]->children()[0]->setProperty("target", name); //для солдиеров - idhska
+//        planescaper->children()[1]->children()[1]->setProperty("target", name);
+        planescaper->children()[1]->children()[0]->setProperty("to", 30*(pos.toInt()%24)-60);
+        planescaper->children()[1]->children()[1]->setProperty("to", 30*floor(pos.toInt()/24)-45);
+        planescaper->children()[1]->setProperty("running", true);
+
+        QEventLoop looop; QTimer::singleShot(1500, &looop, SLOT(quit())); looop.exec(); //yobanarot, bez zaderzhki vse nepoporyadku
+
+        planescaper->children()[0]->children()[0]->setProperty("source", "qrc:/" + anim + ".png");
+        planescaper->children()[0]->children()[0]->setProperty("frameCount", 15);
+        planescaper->children()[0]->children()[0]->setProperty("loops", 1);
+
+        QEventLoop loop; QTimer::singleShot(500, &loop, SLOT(quit())); loop.exec(); //yobanarot, bez zaderzhki vse nepoporyadku
+
+        QMetaObject::invokeMethod(planescaper->children()[0]->children()[0], "restart");
+    }
+    else
+    {
+        planescaper->children()[0]->children()[0]->setProperty("source", "qrc:/" + anim + ".png");
+        planescaper->children()[0]->children()[0]->setProperty("frameCount", 15);
+        planescaper->children()[0]->children()[0]->setProperty("loops", 1);
+
+        QEventLoop loop; QTimer::singleShot(500, &loop, SLOT(quit())); loop.exec(); //yobanarot, bez zaderzhki vse nepoporyadku
+
+        QMetaObject::invokeMethod(planescaper->children()[0]->children()[0], "restart");
+
+//        planescaper->children()[1]->children()[0]->setProperty("target", name); //для солдиеров - idhska
+//        planescaper->children()[1]->children()[1]->setProperty("target", name);
+        planescaper->children()[1]->children()[0]->setProperty("to", 30*(pos.toInt()%24)+30);
+        planescaper->children()[1]->children()[1]->setProperty("to", 30*floor(pos.toInt()/24)-30);
+        planescaper->children()[1]->setProperty("running", true);
+    }
+}
+
 void HandlerSignals::createSoldier(const QString &pos) {
     if (field[pos.toInt() / 24][pos.toInt() % 24] != 1)
     {

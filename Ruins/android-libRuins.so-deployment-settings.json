@@ -9,6 +9,7 @@
    "toolchain-version": "4.9",
    "ndk-host": "linux-x86_64",
    "target-architecture": "armeabi-v7a",
+   "android-package-source-directory": "/home/groenendael/Ruins/android",
    "qml-root-path": "/home/groenendael/Ruins",
    "application-binary": "/home/groenendael/Ruins/libRuins.so"
 }
